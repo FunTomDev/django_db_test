@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% if post_request %}
+	    <span>Product added!</span>
+	{% endif %}
+    
+	<form action="" method="post">
+		{% csrf_token %}
+		<input type="text" name="product_name">
+		<input type="number" step="0.01" min="0" name="product_price">
+		<input type="submit" value="Add product">
+	</form>
+
+{% endblock %}
